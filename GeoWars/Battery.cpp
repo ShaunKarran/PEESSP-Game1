@@ -1,10 +1,11 @@
 #include <WProgram.h>
 #include "Battery.h"
+#include "sprites.h"
 
 Battery::Battery()
 {
 	this->pin = A3;
-	lcd = new LCD_HY28B();
+	lcd = new LCD_HY28B(LCD_RST, LCD_BL_CTRL);
 }
 
 Battery::Battery(uint8_t pin)
@@ -26,7 +27,19 @@ uint8_t Battery::Percentage()
 	return (percentage < 100) ? percentage : 100;
 }
 
-void Battery::Show_Level(uint16_t xPos, uint16_t yPos)
+void Battery::Show_Level()
 {
-	lcd->Draw_Sprite(sprite_battery);
+	uint8_t percentage = Percentage();
+	if (percentage > 80)
+	{
+		lcd->Draw_Sprite(sprite_battery_full, 300, 0);
+	}
+	else if (percentage > 40)
+	{
+		lcd->Draw_Sprite(sprite_battery_mid, 300, 0);
+	}
+	else
+	{
+		lcd->Draw_Sprite(sprite_battery_low, 300, 0);
+	}
 }

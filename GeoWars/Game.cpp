@@ -96,7 +96,12 @@ void Game::Game_Loop()
 					debugLcd.Print_Int(frameRate, 0, 0, WHITE);
 				}
 
+				debugLcd.Print_Int(battery->Percentage(), 0, 0, WHITE);
+
+				battery->Show_Level();
 				gameObjectManager->Draw_All(screenBuffer);
+				battery->Show_Level(); // Before and after drawing screen buffer reduces flicker.
+
 				frameTime = 0;
 			}
 

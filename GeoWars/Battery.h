@@ -21,7 +21,7 @@ public:
 
 	double MilliVoltage();
 	uint8_t Percentage();
-	void Show_Level(uint16_t xPos, uint16_t yPos);
+	void Show_Level();
 
 protected:
 	LCD_HY28B* lcd;
