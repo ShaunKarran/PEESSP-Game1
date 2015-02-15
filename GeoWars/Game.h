@@ -18,7 +18,7 @@ public:
 	static GameObjectManager* Get_GameObjectManager();
 
 private:
-	enum gamestate_t { MAIN_MENU, PLAYING, EXITING };
+	enum gamestate_t { SPLASH_SCREEN, PLAYING };
 
 	static uint32_t gameTime;
 	static uint32_t prevTime;

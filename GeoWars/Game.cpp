@@ -35,7 +35,7 @@ void Game::Start()
 {
 	debugLcd.Set_Font(&ASCII);
 
-	gameState = PLAYING;
+	gameState = SPLASH_SCREEN;
 
 	Player* player = new Player();
 	player->Set_Thumbsticks(thumbstickLeft, thumbstickRight);
@@ -83,7 +83,13 @@ void Game::Game_Loop()
 
 	switch(gameState)
 	{
-		case MAIN_MENU:
+		case SPLASH_SCREEN:
+			debugLcd.Draw_Sprite(sprite_FBDude, 80, 50);
+			if (gameTime > 5000)
+			{
+				debugLcd.Fill(BLACK);
+				gameState = PLAYING;
+			}
 			break;
 
 		case PLAYING:
