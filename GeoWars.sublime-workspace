@@ -4,8 +4,52 @@
 		"selected_items":
 		[
 			[
+				"bomb",
+				"bombCooldown"
+			],
+			[
+				"bom",
+				"bombCooldown"
+			],
+			[
 				"ui",
 				"uint16_t"
+			],
+			[
+				"gam",
+				"gameObjectID"
+			],
+			[
+				"ri",
+				"rightThumbstick"
+			],
+			[
+				"tar",
+				"targetY"
+			],
+			[
+				"vector",
+				"vectorMag"
+			],
+			[
+				"ta",
+				"targetY"
+			],
+			[
+				"vec",
+				"vectorMag"
+			],
+			[
+				"nu",
+				"numPixels"
+			],
+			[
+				"SPI",
+				"SPI_Transfer_8bit"
+			],
+			[
+				"LCD",
+				"LCD_CS"
 			],
 			[
 				"u",
@@ -22,10 +66,6 @@
 			[
 				"le",
 				"thumbstickLeft"
-			],
-			[
-				"ri",
-				"rightThumbstickY"
 			],
 			[
 				"rih",
@@ -98,10 +138,6 @@
 			[
 				"ene",
 				"enemyArray"
-			],
-			[
-				"tar",
-				"targetY"
 			],
 			[
 				"Pr",
@@ -184,10 +220,6 @@
 				"ADC_SAMPLES"
 			],
 			[
-				"LCD",
-				"LCD_RST"
-			],
-			[
 				"col",
 				"colour"
 			],
@@ -234,10 +266,6 @@
 			[
 				"da",
 				"data24"
-			],
-			[
-				"SPI",
-				"SPI_Transmit_8"
 			],
 			[
 				"SP",
@@ -486,34 +514,6 @@
 			[
 				"gf",
 				"gfx_set_pixel"
-			],
-			[
-				"sprite",
-				"sprite_tank"
-			],
-			[
-				"spri",
-				"spritePtr"
-			],
-			[
-				"re",
-				"rect1"
-			],
-			[
-				"pri",
-				"private"
-			],
-			[
-				"by",
-				"bytesWritten"
-			],
-			[
-				"spr",
-				"spriteData1"
-			],
-			[
-				"spi",
-				"spriteSize"
 			]
 		]
 	},
@@ -523,31 +523,15 @@
 			"file": "GeoWars/Game.cpp",
 			"settings":
 			{
-				"buffer_size": 2566,
+				"buffer_size": 2733,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "GeoWars/Player.cpp",
+			"file": "GeoWars/Enemy.cpp",
 			"settings":
 			{
-				"buffer_size": 2104,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "GeoWars/GameObject.cpp",
-			"settings":
-			{
-				"buffer_size": 3143,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "GeoWars/Battery.cpp",
-			"settings":
-			{
-				"buffer_size": 684,
+				"buffer_size": 1334,
 				"line_ending": "Windows"
 			}
 		},
@@ -560,18 +544,10 @@
 			}
 		},
 		{
-			"file": "GeoWars/Player.h",
+			"file": "GeoWars/Enemy.h",
 			"settings":
 			{
-				"buffer_size": 474,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "GeoWars/Battery.h",
-			"settings":
-			{
-				"buffer_size": 580,
+				"buffer_size": 254,
 				"line_ending": "Windows"
 			}
 		}
@@ -623,21 +599,30 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Player.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Player.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Bullet.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Enemy.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObjectManager.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObjectManager.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObject.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Enemy.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GeoWars.ino",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObject.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Bullet.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Battery.cpp",
 		"/C/Users/Shaun/Projects/libTeensy31/libTeensy31/LCD_HY28B/LCD_HY28B.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Battery.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/Art/sprites/battery_full.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/sprites.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/Art/sprites/battery_mid.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/Art/sprites/battery_low.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/ScreenBuffer.cpp",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Thumbstick.cpp",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Thumbstick.h",
-		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/ScreenBuffer.cpp",
-		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Bullet.h",
-		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Bullet.cpp",
-		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObject.cpp",
-		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObject.h",
-		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObjectManager.cpp",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Helpers.h",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Helpers.cpp",
-		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Enemy.cpp",
-		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GeoWars.ino",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/ScreenBuffer.h",
-		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObjectManager.h",
 		"/C/Users/Shaun/Projects/GeoWars/GeoWars/Battery.h",
 		"/C/Users/Shaun/Projects/GeoWars/GeoWars/Thumbstick.cpp",
 		"/C/Users/Shaun/Projects/GeoWars/GeoWars/Battery.cpp",
@@ -741,16 +726,7 @@
 		"/Users/shaunkarran/Google Drive/Uni/2014 - Semester 2/CAB202/Assignment 2/V5 - Worms-like Terrain/src/QUT_Teensy.c",
 		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/src/lcd_5110.c",
 		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/Example Code/BMP085_SMD500_API.c",
-		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/include/RDI2C.h",
-		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/include/bmp085.h",
-		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/src/bmp085.c",
-		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/Example Code/example/ATmega328/i2c.h",
-		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/src/ASCII_lib.h",
-		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/include/lcd_5110.h",
-		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/include/RDLCD.h",
-		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/include/RDSPI.h",
-		"/Users/shaunkarran/Google Drive/Uni/2014 - Semester 2/CAB202/Assignment 2/V5 - Worms-like Terrain/src/Graphics.h",
-		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/Example Code/bmp085/BMP085.cpp"
+		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/include/RDI2C.h"
 	],
 	"find":
 	{
@@ -768,6 +744,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"gameObjectID",
+			"101",
+			"100",
+			"300",
+			"200",
+			"201",
+			"200",
+			"150",
+			"50",
+			"130",
+			"70",
+			"150",
+			"75",
+			"101",
+			"100",
+			"41",
+			"40",
+			"numEnemys",
+			"150",
+			"320",
+			"220",
+			"10",
 			"interfaceLcd",
 			"debugLcd",
 			"uint32_t",
@@ -873,29 +871,7 @@
 			";",
 			"TS1",
 			"Thumb_Stick",
-			"ANALOG_RES",
-			"LCD_",
-			"SetDeadZone",
-			"Joystick",
-			"THUMBSTICK",
-			"JOYSTICK",
-			"Joystick",
-			"_JOYSTICK_H_",
-			"X",
-			"analogRead",
-			"X",
-			"gfx_set_pixel",
-			"this->xPosition = 0;\n	this->yPosition = 0;",
-			"A",
-			"delay_ms",
-			" ▸ ",
-			"LDFLAGS",
-			"LSCRIPT",
-			" ▸ ",
-			"TEENSY3X_BASEPATH",
-			" ▸ ",
-			"P_RS",
-			"LCD_Writ_Bus"
+			"ANALOG_RES"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -913,7 +889,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -922,15 +898,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2566,
+						"buffer_size": 2733,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1035,
-								1035
+								1189,
+								1189
 							]
 						],
 						"settings":
@@ -939,27 +915,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 330.0,
+						"translation.y": 585.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "GeoWars/Player.cpp",
+					"file": "GeoWars/Enemy.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2104,
+						"buffer_size": 1334,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								801,
-								801
+								919,
+								919
 							]
 						],
 						"settings":
@@ -967,78 +943,21 @@
 							"syntax": "Packages/C++/C++.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 90.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "GeoWars/GameObject.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3143,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1052,
-								1052
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1125.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "GeoWars/Battery.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 684,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								684,
-								684
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
+						"translation.x": -0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
-					"buffer": 4,
+					"buffer": 2,
 					"file": "GeoWars/Game.h",
 					"semi_transient": false,
 					"settings":
@@ -1050,8 +969,8 @@
 						"selection":
 						[
 							[
-								241,
-								241
+								173,
+								173
 							]
 						],
 						"settings":
@@ -1063,53 +982,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "GeoWars/Player.h",
+					"buffer": 3,
+					"file": "GeoWars/Enemy.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 474,
+						"buffer_size": 254,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								141,
-								141
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "GeoWars/Battery.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 580,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								522,
-								522
+								254,
+								254
 							]
 						],
 						"settings":
@@ -1120,7 +1010,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

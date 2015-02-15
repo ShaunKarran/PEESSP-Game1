@@ -16,6 +16,7 @@ public:
 	void Update(uint16_t elapsedTime);
 
 	void Fire();
+	void Detonate_Bomb();
 
 private:
 	Thumbstick* leftThumbstick;
@@ -25,6 +26,8 @@ private:
 
 	uint16_t fireRate;
 	static uint16_t timeSinceFired;
+	uint8_t bombsRemaining;
+	static uint16_t bombCooldown;
 };
 
 #endif // _PLAYER_H_

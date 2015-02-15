@@ -29,7 +29,6 @@ void Bullet::Set_Type(bulletType_t type)
 void Bullet::Set_Velocity(double xVel, double yVel)
 {
 	GameObject::Set_Velocity(xVel * speed, yVel * speed);
-	//GameObject::Set_Velocity(xVel, yVel);
 }
 
 void Bullet::Update(uint16_t elapsedTime)

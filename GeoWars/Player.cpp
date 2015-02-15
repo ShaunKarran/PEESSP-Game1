@@ -4,11 +4,14 @@
 #include "Game.h"
 
 uint16_t Player::timeSinceFired;
+uint16_t Player::bombCooldown;
 
 Player::Player()
 {
 	spawnTimer = 0;
 	timeSinceFired = 0;
+	bombsRemaining = 3;
+	bombCooldown = 5000;
 }
 
 Player::~Player()
@@ -71,6 +74,15 @@ void Player::Update(uint16_t elapsedTime)
 	{
 		timeSinceFired += elapsedTime;
 	}
+
+	bombCooldown = (bombCooldown > 0) ? bombCooldown - elapsedTime : 0;
+
+	if (bombsRemaining > 0 && bombCooldown == 0 && rightThumbstick->Is_Pressed())
+	{
+		Detonate_Bomb();
+		bombsRemaining--;
+		bombCooldown = 5000;
+	}
 }
 
 void Player::Fire()
@@ -90,5 +102,17 @@ void Player::Fire()
 		bullet->Move(xPos, yPos);
 		bullet->Set_Velocity(xDirection, -yDirection); // Negative for screen values.
 		Game::Get_GameObjectManager()->Add(bullet);
+	}
+}
+
+void Player::Detonate_Bomb()
+{
+	std::vector<uint32_t>* gameObjectIDs = Game::Get_GameObjectManager()->Get_GameObject_IDs();
+	std::vector<uint32_t>::iterator itr = gameObjectIDs->begin() + 1;
+
+	while (itr != gameObjectIDs->end())
+	{
+		Game::Get_GameObjectManager()->Get_GameObject(*itr)->Set_Dead();
+		itr++;
 	}
 }

@@ -14,6 +14,7 @@ public:
 	void Set_ID(uint32_t ID);
 	uint32_t Get_ID();
 	void Set_Dead();
+	bool Is_Dead();
 	void Move(double x, double y);
 	double X_Pos();
 	double Y_Pos();

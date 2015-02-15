@@ -13,6 +13,9 @@ public:
 	void Update(uint16_t elapsedTime);
 
 	bool Hit_Player();
+
+private:
+	uint16_t speed;
 };
 
 #endif // _ENEMY_H_

@@ -33,6 +33,11 @@ void GameObject::Set_Dead()
 	isDead = true;
 }
 
+bool GameObject::Is_Dead()
+{
+	return isDead;
+}
+
 void GameObject::Move(double x, double y)
 {
 	xPos += x;

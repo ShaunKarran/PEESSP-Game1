@@ -45,7 +45,7 @@ void Game::Start()
 	player->Move(160, 120);
 	gameObjectManager->Add(player);
 
-	int numEnemys = 0;
+	uint8_t numEnemys = 3;
 	Enemy* enemyArray[numEnemys];
 	for (int i = 0; i < numEnemys; i++)
 	{
@@ -87,6 +87,7 @@ void Game::Game_Loop()
 			break;
 
 		case PLAYING:
+			updateTime = (updateTime < minFrameTime) ? updateTime : minFrameTime;
 			gameObjectManager->Update_All(updateTime);
 
 			if (frameTime > minFrameTime || !limitFramerate)
@@ -96,8 +97,6 @@ void Game::Game_Loop()
 					debugLcd.Print_Int(frameRate, 0, 0, WHITE);
 				}
 
-				debugLcd.Print_Int(battery->Percentage(), 0, 0, WHITE);
-
 				battery->Show_Level();
 				gameObjectManager->Draw_All(screenBuffer);
 				battery->Show_Level(); // Before and after drawing screen buffer reduces flicker.
@@ -105,14 +104,14 @@ void Game::Game_Loop()
 				frameTime = 0;
 			}
 
-			// if (enemySpawnTime > 2000)
-			// {
-			// 	Enemy* enemy = new Enemy();
-			// 	enemy->Sprite(sprite_enemy);
-			// 	enemy->Move(random(0, 320), random(0, 240));
-			// 	gameObjectManager->Add(enemy);
-			// 	enemySpawnTime = 0;
-			// }
+			if (enemySpawnTime > 2000)
+			{
+				Enemy* enemy = new Enemy();
+				enemy->Sprite(sprite_enemy);
+				enemy->Move(random(0, 320), random(0, 240));
+				gameObjectManager->Add(enemy);
+				enemySpawnTime = 0;
+			}
 
 			break;
 

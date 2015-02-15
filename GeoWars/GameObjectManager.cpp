@@ -3,7 +3,7 @@
 #include "Helpers.h"
 
 uint32_t GameObjectManager::ID = 0;
-
+uint32_t GameObjectManager::numObjects = 0;
 
 GameObjectManager::GameObjectManager()
 {
@@ -15,20 +15,21 @@ GameObjectManager::~GameObjectManager()
 
 std::vector<GameObject*>::iterator GameObjectManager::Find_Object(uint32_t objectID)
 {
-	std::vector<uint32_t>::iterator itr = gameObjectID.begin();
-	while (*itr != objectID && itr != gameObjectID.end())
+	std::vector<uint32_t>::iterator itr = gameObjectIDs.begin();
+	while (*itr != objectID && itr != gameObjectIDs.end())
 	{
 		itr++;
 	}
-	return gameObjects.begin() + std::distance(gameObjectID.begin(), itr);
+	return gameObjects.begin() + std::distance(gameObjectIDs.begin(), itr);
 }
  
 void GameObjectManager::Add(GameObject* gameObject)
 {
 	gameObject->Set_ID(ID);
 	gameObjects.push_back(gameObject);
-	gameObjectID.push_back(GameObjectManager::ID);
+	gameObjectIDs.push_back(GameObjectManager::ID);
 	GameObjectManager::ID++;
+	GameObjectManager::numObjects++;
 }
 
 void GameObjectManager::Remove(uint32_t objectID)
@@ -37,11 +38,12 @@ void GameObjectManager::Remove(uint32_t objectID)
 	std::vector<uint32_t>::iterator ID;
 
 	object = Find_Object(objectID);
-	ID = gameObjectID.begin() + std::distance(gameObjects.begin(), object);
+	ID = gameObjectIDs.begin() + std::distance(gameObjects.begin(), object);
 
 	delete *object;
 	gameObjects.erase(object);
-	gameObjectID.erase(ID);
+	gameObjectIDs.erase(ID);
+	GameObjectManager::numObjects--;
 }
 
 GameObject* GameObjectManager::Get_GameObject(uint32_t objectID)
@@ -53,6 +55,16 @@ GameObject* GameObjectManager::Get_GameObject(uint32_t objectID)
 std::vector<GameObject*>* GameObjectManager::Get_GameObjects()
 {
 	return &gameObjects;
+}
+
+std::vector<uint32_t>* GameObjectManager::Get_GameObject_IDs()
+{
+	return &gameObjectIDs;
+}
+
+uint32_t GameObjectManager::Num_Objects()
+{
+	return numObjects;
 }
 
 void GameObjectManager::Update_All(uint32_t elapsedTime)
