@@ -1,14 +1,35 @@
 #include "Bullet.h"
 #include "Game.h"
-#include "Distance.h"
+#include "sprites.h"
+#include "Helpers.h"
 
 Bullet::Bullet()
 {
-
 }
 
 Bullet::~Bullet()
 {
+}
+
+void Bullet::Set_Type(bulletType_t type)
+{
+	switch(type)
+	{
+		case STANDARD:
+			speed = 300;
+			maxVelocity = 300;
+			Sprite(sprite_bullet);
+			break;
+
+		default:
+			break;
+	}
+}
+
+void Bullet::Set_Velocity(double xVel, double yVel)
+{
+	GameObject::Set_Velocity(xVel * speed, yVel * speed);
+	//GameObject::Set_Velocity(xVel, yVel);
 }
 
 void Bullet::Update(uint16_t elapsedTime)

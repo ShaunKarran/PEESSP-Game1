@@ -2,7 +2,6 @@
 #include "Player.h"
 #include "Bullet.h"
 #include "Game.h"
-#include "Sprites.h"
 
 uint16_t Player::timeSinceFired;
 
@@ -29,11 +28,11 @@ void Player::Fire_Rate(uint16_t fireRate)
 
 void Player::Update(uint16_t elapsedTime)
 {
-	double someScale = 20000; // So scale down the magnitude of the ts position. Name is temporary.
+	double adcScale = 0.1; // So scale down the magnitude of the ts position.
 	double deltaX, deltaY, xVel, yVel;
 	int16_t leftThumbstickX, leftThumbstickY;
 
-	if (rm)
+	if (isDead)
 	{
 		if (spawnTimer > 3000)
 		{
@@ -51,15 +50,16 @@ void Player::Update(uint16_t elapsedTime)
 	}
 
 	leftThumbstick->Position(&leftThumbstickX, &leftThumbstickY); // Read thumbstick positions.
-	//leftThumbstickX = 1024; leftThumbstickY = 0; // For testing.
 
 	// Move player based on left thumbstick position.
-	xVel = leftThumbstickX / someScale; // Scale ts position to meaningful velocity value.
-	yVel = -leftThumbstickY / someScale; // Negative value. Top of screen is smaller y values.
+	xVel = leftThumbstickX * adcScale; // Scale ts position to meaningful velocity value.
+	yVel = -leftThumbstickY * adcScale; // Negative value. Top of screen is smaller y values.
+
 	Set_Velocity(xVel, yVel); // Add velocity to state and check limits of velocity.
 
-	deltaX = xVelocity * elapsedTime;
-	deltaY = yVelocity * elapsedTime;
+	deltaX = xVelocity * ((double)elapsedTime / 1000);
+	deltaY = yVelocity * ((double)elapsedTime / 1000);
+
 	Move(deltaX, deltaY);
 
 	if (fireRate < timeSinceFired)
@@ -79,13 +79,16 @@ void Player::Fire()
 
 	rightThumbstick->Position(&rightThumbstickX, &rightThumbstickY);
 
-	if (rightThumbstickX != 0 || rightThumbstickY != 0)
+	if (abs(rightThumbstickX) > 500 || abs(rightThumbstickY) > 500)
 	{
+		double magnitude = sqrt((rightThumbstickX * rightThumbstickX) + (rightThumbstickY * rightThumbstickY));
+		double xDirection = rightThumbstickX / magnitude;
+		double yDirection = rightThumbstickY / magnitude;
+
 		Bullet* bullet = new Bullet();
-		bullet->Sprite(sprite_bullet);
+		bullet->Set_Type(Bullet::STANDARD);
 		bullet->Move(xPos, yPos);
-		bullet->Set_Max_Velocity(0.2);
-		bullet->Set_Velocity(rightThumbstickX / 200, -rightThumbstickY / 200); // Negative for screen values.
-		(Game::Get_GameObjectManager())->Add(bullet);
+		bullet->Set_Velocity(xDirection, -yDirection); // Negative for screen values.
+		Game::Get_GameObjectManager()->Add(bullet);
 	}
 }

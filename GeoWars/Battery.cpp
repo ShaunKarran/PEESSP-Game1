@@ -4,6 +4,7 @@
 Battery::Battery()
 {
 	this->pin = A3;
+	lcd = new LCD_HY28B();
 }
 
 Battery::Battery(uint8_t pin)
@@ -21,5 +22,11 @@ double Battery::MilliVoltage()
 uint8_t Battery::Percentage()
 {
 	double voltage = MilliVoltage();
-	return ((voltage - V_MIN) * 100) / V_RANGE;
+	uint8_t percentage = ((voltage - V_MIN) * 100) / V_RANGE;
+	return (percentage < 100) ? percentage : 100;
+}
+
+void Battery::Show_Level(uint16_t xPos, uint16_t yPos)
+{
+	lcd->Draw_Sprite(sprite_battery);
 }

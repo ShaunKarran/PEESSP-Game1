@@ -6,6 +6,8 @@
 #define ADC_RES 12		// bits
 #define ADC_SAMPLES 8	// Number of samples per read.
 
+#define DEADZONE_SIZE 85
+
 class Thumbstick
 {
 public:
@@ -13,8 +15,6 @@ public:
 	Thumbstick(uint8_t xPin, uint8_t yPin, uint8_t buttonPin);
 
 	void Position(int16_t* x, int16_t* y);
-	void Set_Dead_Zone(uint16_t deadZone);
-	uint16_t Dead_Zone();
 	uint8_t Is_Pressed();
 
 protected:

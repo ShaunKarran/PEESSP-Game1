@@ -1,6 +1,6 @@
 #include "GameObjectManager.h"
 #include "Game.h"
-#include "Distance.h"
+#include "Helpers.h"
 
 uint32_t GameObjectManager::ID = 0;
 
@@ -92,7 +92,7 @@ void GameObjectManager::Draw_All(ScreenBuffer* screenBuffer)
 	while (object != gameObjects.end())
 	{
 		// Added constant is padding pixels around sprite.
-		screenBuffer->Set_Side_Length((*object)->Sprite_Size() + 8);
+		screenBuffer->Set_Side_Length((*object)->Sprite_Size() + 10);
 		screenBuffer->Move_To((*object)->X_Pos(), (*object)->Y_Pos());
 
 		// Only draw game objects within a certain distance of the screen buffer.

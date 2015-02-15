@@ -4,6 +4,62 @@
 		"selected_items":
 		[
 			[
+				"ui",
+				"uint16_t"
+			],
+			[
+				"u",
+				"uint16_t"
+			],
+			[
+				"thu",
+				"thumbstickRight"
+			],
+			[
+				"de",
+				"debugLcd"
+			],
+			[
+				"le",
+				"thumbstickLeft"
+			],
+			[
+				"ri",
+				"rightThumbstickY"
+			],
+			[
+				"rih",
+				"rightThumbstickX"
+			],
+			[
+				"rig",
+				"rightThumbstickY"
+			],
+			[
+				"te",
+				"tempY"
+			],
+			[
+				"temp",
+				"tempY"
+			],
+			[
+				"velVe",
+				"velVectorMag"
+			],
+			[
+				"del",
+				"deltaX"
+			],
+			[
+				"yVe",
+				"yVelocity"
+			],
+			[
+				"xVe",
+				"xVelocity"
+			],
+			[
 				"_fra",
 				"_frameRate"
 			],
@@ -32,10 +88,6 @@
 				"_frameTime"
 			],
 			[
-				"ui",
-				"uint8_t"
-			],
-			[
 				"si",
 				"sidelength"
 			],
@@ -48,10 +100,6 @@
 				"enemyArray"
 			],
 			[
-				"del",
-				"deltaY"
-			],
-			[
 				"tar",
 				"targetY"
 			],
@@ -62,10 +110,6 @@
 			[
 				"lef",
 				"leftThumbstickY"
-			],
-			[
-				"rig",
-				"rightThumbstick"
 			],
 			[
 				"_thu",
@@ -132,10 +176,6 @@
 				"ScreenBuffer"
 			],
 			[
-				"te",
-				"testObject"
-			],
-			[
 				"tes",
 				"testObj"
 			],
@@ -168,20 +208,12 @@
 				"TS1_X_PIN"
 			],
 			[
-				"thu",
-				"thumbstick1"
-			],
-			[
 				"ADC",
 				"ADC_SAMPLES"
 			],
 			[
 				"AD",
 				"ADC_AVG"
-			],
-			[
-				"u",
-				"uint8_t"
 			],
 			[
 				"back",
@@ -198,10 +230,6 @@
 			[
 				"LCD_5",
 				"LCD_5110_Print_Str"
-			],
-			[
-				"de",
-				"delayMs"
 			],
 			[
 				"da",
@@ -246,10 +274,6 @@
 			[
 				"LCD_Wri",
 				"LCD_Write_Reg"
-			],
-			[
-				"temp",
-				"tempurature"
 			],
 			[
 				"lcd",
@@ -490,30 +514,6 @@
 			[
 				"spi",
 				"spriteSize"
-			],
-			[
-				"he",
-				"height1"
-			],
-			[
-				"w",
-				"width1"
-			],
-			[
-				"im",
-				"imageData1"
-			],
-			[
-				"imag",
-				"imageWidth"
-			],
-			[
-				"ar",
-				"arraySize"
-			],
-			[
-				"ima",
-				"imageSize2"
 			]
 		]
 	},
@@ -523,63 +523,7 @@
 			"file": "GeoWars/Game.cpp",
 			"settings":
 			{
-				"buffer_size": 2519,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "GeoWars/GameObjectManager.cpp",
-			"settings":
-			{
-				"buffer_size": 2934,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "GeoWars/ScreenBuffer.cpp",
-			"settings":
-			{
-				"buffer_size": 1713,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "GeoWars/GameObject.cpp",
-			"settings":
-			{
-				"buffer_size": 3108,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "GeoWars/Game.h",
-			"settings":
-			{
-				"buffer_size": 855,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "GeoWars/GameObjectManager.h",
-			"settings":
-			{
-				"buffer_size": 701,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "GeoWars/ScreenBuffer.h",
-			"settings":
-			{
-				"buffer_size": 641,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "GeoWars/GameObject.h",
-			"settings":
-			{
-				"buffer_size": 822,
+				"buffer_size": 2566,
 				"line_ending": "Windows"
 			}
 		},
@@ -587,7 +531,47 @@
 			"file": "GeoWars/Player.cpp",
 			"settings":
 			{
-				"buffer_size": 2004,
+				"buffer_size": 2104,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "GeoWars/GameObject.cpp",
+			"settings":
+			{
+				"buffer_size": 3143,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "GeoWars/Battery.cpp",
+			"settings":
+			{
+				"buffer_size": 684,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "GeoWars/Game.h",
+			"settings":
+			{
+				"buffer_size": 883,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "GeoWars/Player.h",
+			"settings":
+			{
+				"buffer_size": 474,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "GeoWars/Battery.h",
+			"settings":
+			{
+				"buffer_size": 580,
 				"line_ending": "Windows"
 			}
 		}
@@ -635,10 +619,25 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Shaun/Projects/GeoWars/GeoWars"
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars"
 	],
 	"file_history":
 	[
+		"/C/Users/Shaun/Projects/libTeensy31/libTeensy31/LCD_HY28B/LCD_HY28B.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Thumbstick.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Thumbstick.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/ScreenBuffer.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Bullet.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Bullet.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObject.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObject.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObjectManager.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Helpers.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Helpers.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Enemy.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GeoWars.ino",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/ScreenBuffer.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObjectManager.h",
 		"/C/Users/Shaun/Projects/GeoWars/GeoWars/Battery.h",
 		"/C/Users/Shaun/Projects/GeoWars/GeoWars/Thumbstick.cpp",
 		"/C/Users/Shaun/Projects/GeoWars/GeoWars/Battery.cpp",
@@ -751,22 +750,7 @@
 		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/include/RDLCD.h",
 		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/include/RDSPI.h",
 		"/Users/shaunkarran/Google Drive/Uni/2014 - Semester 2/CAB202/Assignment 2/V5 - Worms-like Terrain/src/Graphics.h",
-		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/Example Code/bmp085/BMP085.cpp",
-		"/Users/shaunkarran/Google Drive/Programming/Teensy31/Teensy3x_HY28BTest/src/HY28B_test.c",
-		"/Users/shaunkarran/Google Drive/Robot Development Platform/06_Software/01_libRobotDev/RDI2C.h",
-		"/Users/shaunkarran/Google Drive/Programming/Teensy31/Teensy3x_HY28BTest/src/lcd_HY28B.c",
-		"/Users/shaunkarran/Google Drive/Programming/Teensy31/Teensy3x_HY28BTest/include/lcd_HY28B.h",
-		"/Users/shaunkarran/Google Drive/PEESSP/LCD/example source code/GLCD/GLCD.c",
-		"/Users/shaunkarran/Google Drive/Programming/Teensy31/Teensy3x_HY28BTest/include/spi.h",
-		"/Users/shaunkarran/Google Drive/Programming/Teensy31/Teensy3x_HY28BTest/src/spi.c",
-		"/Applications/Arduino.app/Contents/Resources/Java/libraries/SPI/SPI.h",
-		"/Users/shaunkarran/Google Drive/Programming/Teensy31/Teensy3x_HY28BTest/makefile",
-		"/Users/shaunkarran/Google Drive/Programming/Teensy31/Teensy3x_SPITest/src/spi.c",
-		"/Users/shaunkarran/Google Drive/Programming/Teensy31/Teensy3x_SPITest/include/spi.h",
-		"/Applications/Arduino.app/Contents/Resources/Java/hardware/teensy/cores/teensy3/WProgram.h",
-		"/Applications/Arduino.app/Contents/Resources/Java/hardware/teensy/cores/teensy3/Arduino.h",
-		"/Users/shaunkarran/Google Drive/Programming/Teensy31/Teensy3x_HY28BTest/src/5110_test.c",
-		"/Users/shaunkarran/Google Drive/Programming/Teensy20/ledtest c++/include/bitwise.h"
+		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/Example Code/bmp085/BMP085.cpp"
 	],
 	"find":
 	{
@@ -784,6 +768,37 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"interfaceLcd",
+			"debugLcd",
+			"uint32_t",
+			"1000",
+			"10000",
+			"                ",
+			"               ",
+			"              ",
+			"             ",
+			"            ",
+			"           ",
+			"          ",
+			"         ",
+			"        ",
+			"       ",
+			"      ",
+			"     ",
+			"    ",
+			"20000",
+			"40000",
+			"600",
+			"speed",
+			"200",
+			"leftThumbstickX",
+			"vector",
+			"velVector",
+			"yVel",
+			"xVel",
+			"50",
+			"30",
+			"100",
 			"screenBuffer",
 			"ScreenBuffer",
 			"numUpdates",
@@ -880,38 +895,7 @@
 			"TEENSY3X_BASEPATH",
 			" ▸ ",
 			"P_RS",
-			"LCD_Writ_Bus",
-			"allData",
-			"buf[",
-			"(5",
-			"(2",
-			"delay",
-			"Delay",
-			"delay",
-			"Delay",
-			"delay",
-			"Delay",
-			"delay",
-			"Delay",
-			"delay",
-			"Delay",
-			"delay",
-			"LCD_Write_COM_DATA",
-			"delay_ms(50); // Temp delay function. REMOVE",
-			"Stupid_Delay",
-			"LCDClear",
-			"LCD_Write_Byte",
-			"lcd_print_str",
-			"temp",
-			"lcd_print_str(",
-			"\"ac",
-			"ac1:",
-			" ",
-			"RDI2C_Read",
-			"RDI2C_Write",
-			"bufferLength",
-			"bufferIndex",
-			"RDI2CSM"
+			"LCD_Writ_Bus"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -929,7 +913,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -938,15 +922,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2519,
+						"buffer_size": 2566,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1884,
-								1884
+								1035,
+								1035
 							]
 						],
 						"settings":
@@ -954,28 +938,57 @@
 							"syntax": "Packages/C++/C++.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
-						"translation.y": 945.0,
+						"translation.x": 0.0,
+						"translation.y": 330.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "GeoWars/Player.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2104,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								801,
+								801
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "GeoWars/GameObjectManager.cpp",
+					"buffer": 2,
+					"file": "GeoWars/GameObject.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2934,
+						"buffer_size": 3143,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2501,
-								2501
+								1052,
+								1052
 							]
 						],
 						"settings":
@@ -984,62 +997,32 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 855.0,
+						"translation.y": 1125.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "GeoWars/ScreenBuffer.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1713,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								326,
-								326
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 315.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
 					"buffer": 3,
-					"file": "GeoWars/GameObject.cpp",
+					"file": "GeoWars/Battery.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3108,
+						"buffer_size": 684,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								62,
-								62
+								684,
+								684
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/C++/C++.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1051,7 +1034,7 @@
 			]
 		},
 		{
-			"selected": 4,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1060,15 +1043,44 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 855,
+						"buffer_size": 883,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								805,
-								805
+								241,
+								241
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "GeoWars/Player.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 474,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								141,
+								141
 							]
 						],
 						"settings":
@@ -1084,116 +1096,28 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "GeoWars/GameObjectManager.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 701,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
 					"buffer": 6,
-					"file": "GeoWars/ScreenBuffer.h",
+					"file": "GeoWars/Battery.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 641,
+						"buffer_size": 580,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								576,
-								576
+								522,
+								522
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/C++/C++.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "GeoWars/GameObject.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 822,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "GeoWars/Player.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2004,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								796,
-								796
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,

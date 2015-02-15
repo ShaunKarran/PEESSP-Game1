@@ -8,7 +8,7 @@ GameObject::GameObject()
 	yPos = 0;
 	xVelocity = 0;
 	yVelocity = 0;
-	maxVelocity = 0.1;
+	maxVelocity = 10;
 	hasSprite = false;
 	isDead = false;
 	rm = false;
@@ -91,8 +91,8 @@ void GameObject::Update(uint16_t elapsedTime)
 	{
 		double deltaX, deltaY;
 
-		deltaX = xVelocity * elapsedTime;
-		deltaY = yVelocity * elapsedTime;
+		deltaX = xVelocity * ((double)elapsedTime / 1000);
+		deltaY = yVelocity * ((double)elapsedTime / 1000);
 		Move(deltaX, deltaY);
 	}
 }
@@ -136,7 +136,7 @@ void GameObject::Draw(ScreenBuffer* screenBuffer)
 
 void GameObject::Set_Velocity(double xVel, double yVel)
 {
-	if (abs(xVel) < maxVelocity)
+	if (abs(xVel) <= maxVelocity)
 	{
 		xVelocity = xVel;
 	}
@@ -149,7 +149,7 @@ void GameObject::Set_Velocity(double xVel, double yVel)
 		xVelocity = -maxVelocity;
 	}
 
-	if (abs(yVel) < maxVelocity)
+	if (abs(yVel) <= maxVelocity)
 	{
 		yVelocity = yVel;
 	}

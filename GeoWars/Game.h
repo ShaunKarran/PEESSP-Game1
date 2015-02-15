@@ -29,6 +29,7 @@ private:
 	static uint16_t minFrameTime;
 	static uint16_t frameRate;
 	static bool limitFramerate;
+	static bool showFramerate;
 
 	static gamestate_t gameState;
 	static ScreenBuffer* screenBuffer;

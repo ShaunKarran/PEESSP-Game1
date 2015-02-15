@@ -1,6 +1,6 @@
 #include "Enemy.h"
 #include "Game.h"
-#include "Distance.h"
+#include "Helpers.h"
 
 Enemy::Enemy()
 {

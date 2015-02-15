@@ -23,7 +23,7 @@ public:
 	void Draw(ScreenBuffer* screenBuffer);
 	virtual void Update(uint16_t elapsedTime);
 	
-	void Set_Velocity(double xVel, double yVel);
+	virtual void Set_Velocity(double xVel, double yVel);
 	void Set_Max_Velocity(double maxVel);
 
 protected:

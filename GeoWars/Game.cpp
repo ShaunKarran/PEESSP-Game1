@@ -18,6 +18,7 @@ uint16_t Game::enemySpawnTime;
 uint16_t Game::minFrameTime;
 uint16_t Game::frameRate;
 bool Game::limitFramerate;
+bool Game::showFramerate;
 
 LCD_HY28B Game::debugLcd;
 
@@ -33,7 +34,6 @@ Battery* Game::battery = new Battery();
 void Game::Start()
 {
 	debugLcd.Set_Font(&ASCII);
-	screenBuffer->Set_Side_Length(5);
 
 	gameState = PLAYING;
 
@@ -41,10 +41,11 @@ void Game::Start()
 	player->Set_Thumbsticks(thumbstickLeft, thumbstickRight);
 	player->Sprite(sprite_player);
 	player->Fire_Rate(300);
+	player->Set_Max_Velocity(200);
 	player->Move(160, 120);
 	gameObjectManager->Add(player);
 
-	int numEnemys = 3;
+	int numEnemys = 0;
 	Enemy* enemyArray[numEnemys];
 	for (int i = 0; i < numEnemys; i++)
 	{
@@ -61,6 +62,7 @@ void Game::Start()
 	prevTime = gameTime;
 	minFrameTime = 16; // 33 = 30fps. 16 = 60fps.
 	limitFramerate = true;
+	showFramerate = false;
 
 	while (1)
 	{
@@ -89,20 +91,23 @@ void Game::Game_Loop()
 
 			if (frameTime > minFrameTime || !limitFramerate)
 			{
-				debugLcd.Print_Int(frameRate, 0, 0, WHITE);
-				debugLcd.Print_Int(battery->Percentage(), 0, 10, GREEN);
+				if (showFramerate)
+				{
+					debugLcd.Print_Int(frameRate, 0, 0, WHITE);
+				}
+
 				gameObjectManager->Draw_All(screenBuffer);
 				frameTime = 0;
 			}
 
-			if (enemySpawnTime > 2000)
-			{
-				Enemy* enemy = new Enemy();
-				enemy->Sprite(sprite_enemy);
-				enemy->Move(random(0, 320), random(0, 240));
-				gameObjectManager->Add(enemy);
-				enemySpawnTime = 0;
-			}
+			// if (enemySpawnTime > 2000)
+			// {
+			// 	Enemy* enemy = new Enemy();
+			// 	enemy->Sprite(sprite_enemy);
+			// 	enemy->Move(random(0, 320), random(0, 240));
+			// 	gameObjectManager->Add(enemy);
+			// 	enemySpawnTime = 0;
+			// }
 
 			break;
 
