@@ -10,6 +10,7 @@ GameObject::GameObject()
 	yVelocity = 0;
 	maxVelocity = 10;
 	hasSprite = false;
+	hasBeenDrawn = false;
 	isDead = false;
 	rm = false;
 }
@@ -86,6 +87,11 @@ bool GameObject::Is_On_Screen()
 	}
 }
 
+bool GameObject::Has_Been_Drawn()
+{
+	return hasBeenDrawn;
+}
+
 void GameObject::Update(uint16_t elapsedTime)
 {
 	if (rm)
@@ -100,6 +106,8 @@ void GameObject::Update(uint16_t elapsedTime)
 		deltaY = yVelocity * ((double)elapsedTime / 1000);
 		Move(deltaX, deltaY);
 	}
+	
+	hasBeenDrawn = false;
 }
 
 void GameObject::Draw(ScreenBuffer* screenBuffer)
@@ -136,6 +144,7 @@ void GameObject::Draw(ScreenBuffer* screenBuffer)
 				}
 			}
 		}
+		hasBeenDrawn = true;
 	}
 }
 

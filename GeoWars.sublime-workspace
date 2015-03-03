@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"has",
+				"hasBeenDrawn"
+			],
+			[
+				"uint",
+				"uint8_t"
+			],
+			[
+				"gam",
+				"gameState"
+			],
+			[
 				"bomb",
 				"bombCooldown"
 			],
@@ -14,10 +26,6 @@
 			[
 				"ui",
 				"uint16_t"
-			],
-			[
-				"gam",
-				"gameObjectID"
 			],
 			[
 				"ri",
@@ -222,10 +230,6 @@
 			[
 				"col",
 				"colour"
-			],
-			[
-				"uint",
-				"uint16_t"
 			],
 			[
 				"Wr",
@@ -510,10 +514,6 @@
 			[
 				"SON",
 				"SONIC_TRIGGER"
-			],
-			[
-				"gf",
-				"gfx_set_pixel"
 			]
 		]
 	},
@@ -523,31 +523,39 @@
 			"file": "GeoWars/Game.cpp",
 			"settings":
 			{
-				"buffer_size": 2733,
+				"buffer_size": 2928,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "GeoWars/Enemy.cpp",
+			"file": "GeoWars/GameObjectManager.cpp",
 			"settings":
 			{
-				"buffer_size": 1334,
+				"buffer_size": 3275,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "GeoWars/Game.h",
+			"file": "GeoWars/GameObject.cpp",
 			"settings":
 			{
-				"buffer_size": 883,
+				"buffer_size": 3323,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "GeoWars/Enemy.h",
+			"file": "GeoWars/Player.cpp",
 			"settings":
 			{
-				"buffer_size": 254,
+				"buffer_size": 2735,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "GeoWars/GameObject.h",
+			"settings":
+			{
+				"buffer_size": 891,
 				"line_ending": "Windows"
 			}
 		}
@@ -599,14 +607,18 @@
 	],
 	"file_history":
 	[
-		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Player.h",
-		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Player.cpp",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Bullet.cpp",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Enemy.cpp",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Enemy.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Game.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/Art/sprites/EESSLogo.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/sprites.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/Art/sprites/FBDude.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Player.h",
+		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Player.cpp",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObjectManager.cpp",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObjectManager.h",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObject.cpp",
-		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Enemy.h",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GeoWars.ino",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/GameObject.h",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Bullet.h",
@@ -614,7 +626,6 @@
 		"/C/Users/Shaun/Projects/libTeensy31/libTeensy31/LCD_HY28B/LCD_HY28B.cpp",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/Battery.h",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/Art/sprites/battery_full.h",
-		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/sprites.h",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/Art/sprites/battery_mid.h",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/Art/sprites/battery_low.h",
 		"/C/Users/Shaun/Projects/PEESSP-Game1/GeoWars/ScreenBuffer.cpp",
@@ -723,10 +734,7 @@
 		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/Example Code/example/ATmega328/main.c",
 		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/Example Code/example/ATmega328/defs.h",
 		"/Users/shaunkarran/Google Drive/Uni/2014 - Semester 2/CAB202/Assignment 2/V5 - Worms-like Terrain/src/QUT_Teensy.h",
-		"/Users/shaunkarran/Google Drive/Uni/2014 - Semester 2/CAB202/Assignment 2/V5 - Worms-like Terrain/src/QUT_Teensy.c",
-		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/src/lcd_5110.c",
-		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/Example Code/BMP085_SMD500_API.c",
-		"/Users/shaunkarran/Google Drive/EESS/Statosphere Balloon/Software/BMP085/include/RDI2C.h"
+		"/Users/shaunkarran/Google Drive/Uni/2014 - Semester 2/CAB202/Assignment 2/V5 - Worms-like Terrain/src/QUT_Teensy.c"
 	],
 	"find":
 	{
@@ -898,15 +906,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2733,
+						"buffer_size": 2928,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1189,
-								1189
+								2538,
+								2538
 							]
 						],
 						"settings":
@@ -915,27 +923,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 585.0,
+						"translation.y": 1080.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "GeoWars/Enemy.cpp",
+					"file": "GeoWars/GameObjectManager.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1334,
+						"buffer_size": 3275,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								919,
-								919
+								2432,
+								2432
 							]
 						],
 						"settings":
@@ -943,8 +951,8 @@
 							"syntax": "Packages/C++/C++.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 1080.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -953,24 +961,82 @@
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 2,
-					"file": "GeoWars/Game.h",
+					"file": "GeoWars/GameObject.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 883,
+						"buffer_size": 3323,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								173,
-								173
+								1425,
+								1425
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1350.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "GeoWars/Player.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2735,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1491,
+								1491
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 405.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "GeoWars/GameObject.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 891,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								402,
+								402
 							]
 						],
 						"settings":
@@ -982,35 +1048,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "GeoWars/Enemy.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 254,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								254,
-								254
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

@@ -84,7 +84,8 @@ void Game::Game_Loop()
 	switch(gameState)
 	{
 		case SPLASH_SCREEN:
-			debugLcd.Draw_Sprite(sprite_FBDude, 80, 50);
+			debugLcd.Draw_Sprite(sprite_FBDude, 90, 0);
+			debugLcd.Draw_Sprite(sprite_EESSLogo, 20, 130);
 			if (gameTime > 5000)
 			{
 				debugLcd.Fill(BLACK);
@@ -103,7 +104,7 @@ void Game::Game_Loop()
 					debugLcd.Print_Int(frameRate, 0, 0, WHITE);
 				}
 
-				battery->Show_Level();
+				//battery->Show_Level();
 				gameObjectManager->Draw_All(screenBuffer);
 				battery->Show_Level(); // Before and after drawing screen buffer reduces flicker.
 

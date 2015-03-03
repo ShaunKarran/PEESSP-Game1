@@ -21,6 +21,7 @@ public:
 	void Sprite(const uint16_t* sprite);
 	uint8_t Sprite_Size();
 	bool Is_On_Screen();
+	bool Has_Been_Drawn();
 	void Draw(ScreenBuffer* screenBuffer);
 	virtual void Update(uint16_t elapsedTime);
 	
@@ -42,6 +43,7 @@ protected:
 	const uint16_t* sprite;
 	uint8_t spriteWidth;
 	uint8_t spriteHeight;
+	bool hasBeenDrawn;
 };
 
 #endif // _GAMEOBJECT_H_

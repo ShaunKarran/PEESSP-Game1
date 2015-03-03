@@ -83,6 +83,8 @@ void Player::Update(uint16_t elapsedTime)
 		bombsRemaining--;
 		bombCooldown = 5000;
 	}
+	
+	hasBeenDrawn = false;
 }
 
 void Player::Fire()

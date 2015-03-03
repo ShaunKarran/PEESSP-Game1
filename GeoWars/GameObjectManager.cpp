@@ -103,25 +103,27 @@ void GameObjectManager::Draw_All(ScreenBuffer* screenBuffer)
 	std::vector<GameObject*>::const_iterator object = gameObjects.begin();
 	while (object != gameObjects.end())
 	{
-		// Added constant is padding pixels around sprite.
-		screenBuffer->Set_Side_Length((*object)->Sprite_Size() + 10);
-		screenBuffer->Move_To((*object)->X_Pos(), (*object)->Y_Pos());
+		//if (!(*object)->Has_Been_Drawn())
+		//{
+			// Added constant is padding pixels around sprite.
+			screenBuffer->Set_Side_Length((*object)->Sprite_Size() + 10);
+			screenBuffer->Move_To((*object)->X_Pos(), (*object)->Y_Pos());
 
-		// Only draw game objects within a certain distance of the screen buffer.
-		std::vector <GameObject*>::iterator object2 = gameObjects.begin();
-		while (object2 != gameObjects.end())
-		{
-			uint16_t dist = Distance_2D((*object2)->X_Pos(), (*object2)->Y_Pos(),
-										screenBuffer->X_Pos(), screenBuffer->Y_Pos());
-
-			if (dist < screenBuffer->Side_Length())
+			// Only draw game objects within a certain distance of the screen buffer.
+			std::vector <GameObject*>::iterator object2 = gameObjects.begin();
+			while (object2 != gameObjects.end())
 			{
-				(*object2)->Draw(screenBuffer);
-			}
-			object2++;
-		}
-		screenBuffer->Render_To_LCD();
+				uint16_t dist = Distance_2D((*object2)->X_Pos(), (*object2)->Y_Pos(),
+											screenBuffer->X_Pos(), screenBuffer->Y_Pos());
 
+				if (dist < screenBuffer->Side_Length())
+				{
+					(*object2)->Draw(screenBuffer);
+				}
+				object2++;
+			}
+			screenBuffer->Render_To_LCD();
+		//}
 		object++;
 	}
 }
